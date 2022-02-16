@@ -1,0 +1,751 @@
+@font-face {
+  /* طريقة تضمين الخط في الملف*/
+  font-family: ar-font;
+  src: url(../fonts/Cairo-SemiBold.ttf);
+}
+
+body {
+  direction: rtl;
+  /*لجعل اتجاه الخط من اليمين لليسار لان صفحة الويب عربيه*/
+  font-family: ar-font;
+  /*جعل الخط اللي اضفناه للملف هو الخط الافتراضي لصفحة الويب */
+}
+
+header .overlay {
+  background-color: rgba(151, 147, 147, 0.808);
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0% !important;
+
+}
+
+header {
+  background-image: url(../image/صورة\ معرض\ 1.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+header .counter {
+  padding: 0;
+}
+
+
+/* تحديد حجم الخط وشدته والتباعد بين الأسطر واللون للعنوان الرئيسي */
+
+header .page-heading h1 {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 75px;
+  color: #fff;
+  padding-top: 70px;
+}
+
+/* وجعل عرض الفقرة 40% من قيمة عرض الصفحة p تحديد حجم الخط والتباعد بين الأسطر واللون للفقرة */
+
+header .page-heading h3 {
+  width: 60%;
+  font-size: 20px;
+  line-height: 25px;
+  color: #fff;
+  /* auto وتحديد القيمة 0 margin توسيط أي عنصر يمتلك عرض محدد باستخدام الخاصية */
+  margin: 0 auto;
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+/* تطبيق تنسيقات الخط على الأرقام، وجعلها في أسطر مختلفة */
+
+header .counter .is-countdown .countdown-section .countdown-amount {
+  display: block;
+  font-size: 70px;
+  font-weight: bold;
+  color: #a23810;
+
+}
+
+/* تطبيق تنسيقات الخط على العامل الزمني، وجعله في أسطر مختلفة */
+
+header .counter .is-countdown .countdown-section .countdown-period {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: 50px;
+}
+
+/* تظهر في خط واحد وتحديد هامش لها count-section جعل جميع عناصر الصنف */
+
+header .counter .is-countdown .countdown-section {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+/* تطبيق هامش وحاشية على العداد في الصفحة */
+
+header .counter {
+  margin: 20px 5px auto;
+  padding: 20px;
+}
+
+/******************************* the secend section *********************************/
+
+/* ضبط الحاشية من الأعلى والأسفل لعناصر الصور */
+
+section.gallery {
+  padding: 55px 0;
+  background-color: #f7f7f7;
+}
+
+/* ضبط الهامش ليفصل بين العنوان والفقرات في الأسفل */
+
+section.gallery .title {
+  margin-bottom: 60px;
+}
+
+/* تنسيقات الخط المطبقة في العنوان */
+
+section.gallery .title h1 {
+  font-size: 30px;
+  line-height: 20px;
+  color: #a23810;
+  font-weight: bold;
+}
+
+/* إخفاء التنسيقات المطبقه في النوع رايدو في هذا القسم */
+
+section.gallery .work-gallery input {
+  display: none;
+}
+
+/* التنسيقات الخاصة بالتصنيفات الموجودة بالقسم */
+
+section.gallery .work-gallery label {
+  font-size: 18px;
+  line-height: 35px;
+  color: rgba(151, 147, 147, 0.808);
+  cursor: pointer;
+  margin: 0 7px 40px;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  border: 2px solid #e4eeee;
+  border-radius: 2px;
+  transition: all 0.5s ease;
+}
+
+/* التنسيقات الخاصة بالتصنيفات عند مرور مؤشر الفأرة فوقه */
+
+section.gallery .work-gallery label:hover {
+  color: #ffffff;
+  background-color: #a23810;
+  border: 2px solid #a23810;
+}
+
+/* تغيير لون التصنيفات عند النقر عليها */
+
+/* الرمز ~ معناه ان العنصر الذي بعدها هو بعد العنصر الاول يأتي */
+
+section.gallery .work-gallery input.item-type-1:checked~label.label-type-1, section.gallery .work-gallery input.item-type-2:checked~label.label-type-2, section.gallery .work-gallery input.item-type-3:checked~label.label-type-3, section.gallery .work-gallery input.item-type-all:checked~label.label-type-all {
+  color: #ffffff;
+  background-color: #a23810;
+  border: 2px solid #a23810;
+}
+
+/* تكبير الصور التابعة للتصنيف عند الضغط عليه */
+
+section.gallery .work-gallery input.item-type-1:checked~.items .item-type-1, section.gallery .work-gallery input.item-type-2:checked~.items .item-type-2, section.gallery .work-gallery input.item-type-3:checked~.items .item-type-3 {
+  transform: scale(1.08);
+  opacity: 1;
+  /* حتى يظهر بشكل واضح دون درجة شفافيه */
+}
+
+/* تصغير باقي صور التصنيفات وظهورها بشفافية */
+
+/* العلامة < فهي أحد محددات  css selector" css" و تسمى مُحدِّد العناصر الأبناء
+(child combinator)  و هي تستخدم لتطبيق تنسيقات على الابن المباشر لعنصر ما
+واذا لم يكن ابن له لا يطبق عليه تنسيقات  */
+
+section.gallery .work-gallery input.item-type-1:checked~.items .item:not(.item-type-1), section.gallery .work-gallery input.item-type-2:checked~.items>.item:not(.item-type-2), section.gallery .work-gallery input.item-type-3:checked~.items>.item:not(.item-type-3) {
+  transform: scale(0.8);
+  opacity: 0.5;
+  /* جعل العناصر بشفافية 0.5 */
+}
+
+/* جعل التنسيقات على مجموعة الصور تظهر ببطء */
+/* تحديد مسافة تفصل الصور عن بعضها في ملف الأعمال */
+
+section.gallery .work-gallery .items .item {
+  transition: all 0.6s ease;
+  margin-bottom: 25px;
+}
+
+
+/******************************* the third section *********************************/
+
+/* ضبط الحاشية ولون الخلفية لعارض الشرائح */
+
+section.slider {
+  background-color: #ffffff;
+  padding: 55px 0 110px;
+  z-index: 30;
+  text-align: right;
+  position: relative;
+  direction: ltr !important;
+}
+
+/* التنسيقات المطبقة على العنوان في عارض الشرائح */
+
+section.slider .title h3 {
+  font-size: 30px;
+  margin-bottom: 60px;
+  color: #a23810;
+}
+
+/* توسيط معرض الصور أفقيا وتحديد عرضه بـ 60% من عرض الصفحة */
+
+section.slider .carousel-inner {
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+section.slider .carousel-inner .carousel-item h4 {
+  font-size: 26px;
+  text-align: center;
+}
+
+/* تنسيق موضع نقاط التنقل وخصائصها */
+
+section.slider .carousel-indicators {
+  bottom: -60px;
+  padding: 0;
+}
+
+section.slider .carousel-indicators li {
+  max-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #a23810;
+}
+
+/* تغير لون خلفية النقطة الفعالة */
+
+section.slider .carousel-indicators li.active {
+  background-color: #a23810;
+}
+
+/* تنسيقات أسهم التنقل */
+
+section.slider .carousel-control-next, section.slider .carousel-control-prev {
+  width: 70px;
+  height: 70px;
+  color: #a23810;
+  border-radius: 50%;
+  border: 1px solid #a23810;
+  margin-top: 20%;
+  opacity: 1;
+
+}
+
+/******************************* the fourth section ********************************/
+
+/* تطبيق خلفية رمادية وضبط الحاشية من الأعلى والأسفل */
+
+section.Services {
+  padding: 55px 0;
+  background-color: #f7f7f7;
+}
+
+/* تطبيق التنسيقات الخاصة بالخط في العنوان */
+
+section.Services .title h3 {
+  font-size: 30px;
+  color: #a23810;
+}
+
+/* إضافة إطار وتطبيق التنسيقات الخاصة بخدمات المعرض */
+
+section.Services .plan {
+  width: 100%;
+  background-color: #ffffff;
+  color: #a9a9ab;
+  border: 2px solid #ededed;
+  padding-top: 30px;
+  margin-top: 40px;
+  height: 88%;
+}
+
+/* تنسيقات الخط في عناوين الخدمات */
+section.Services .plan p {
+  color: #a23810;
+  font-size: 24px;
+}
+
+section.Services img {
+  width: 150px;
+  height: 150px;
+}
+
+/* تطبيق التنسيقات على الخط */
+
+section.Services .plan h3 {
+  font-size: 20px;
+  padding: 30px;
+}
+
+
+
+
+
+/*************************** footer final section *************************/
+
+footer {
+  background-image: url(../image/صورة\ معرض\ 2.jpg) !important;
+  background-size: auto;
+  background-position: center center;
+  padding: 50px;
+}
+
+/* تصغير حجم نموذج إدخال البريد الإلكتروني ليصبح 30% من حجم الصفحة */
+
+footer .send-notification .input-group {
+  width: 30%;
+  margin: 0 auto;
+}
+
+/* تنسيق الخط والحدود داخل نموذج البريد الإلكتروني */
+
+footer .send-notification .input-group input {
+  border-radius: 0;
+  font-size: 18px;
+  font-family: ar-font;
+  color: #000;
+  border-width: 2px;
+  border-color: #e6e6e6;
+}
+
+/* تنسيق لون وحجم الزر المستخدم لإرسال البريد الإلكتروني */
+
+footer .send-notification .input-group button {
+  border-radius: 0;
+  background-color: rgb(158, 147, 147);
+  padding: .5rem 1.5rem;
+  color: #000;
+  font-size: 26px;
+}
+
+footer .send-notification .input-group button .fas, footer .input-group button .fas {
+  color: #a23810;
+  font-size: 20px;
+}
+
+/* تغير موضع رسائل التحذير وإخفائها */
+
+footer .send-notification .input-group .alert, footer .input-group .alert {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  /* هون لتوسيط رسائل التحذير وجعلها في منتصف الشاشة نجعل اليمين واليسار يساوي الصفر */
+  left: 0;
+  margin-bottom: 30px;
+  display: none;
+  text-align: center;
+}
+
+
+
+/* تنسيق حجم الخط ولونه ونوع الخط لنموذج البريد الإلكتروني */
+
+footer .send-notification h1 {
+  font-size: 30px;
+  color: #fff;
+  margin: 0 auto 15px;
+  text-align: center;
+
+
+}
+
+
+/* تنسيق لون وحجم الخط في العنوان */
+
+section.features h2 {
+  margin-bottom: 50px;
+  font-size: 45px;
+  color: #555555;
+}
+
+section.features .media {
+  border: 4px solid #fafafa;
+  padding: 40px 10px;
+  margin-bottom: 20px;
+  position: relative;
+  max-height: 190px;
+}
+
+/* ضبط قيم الحاشية والهامش والحد */
+
+section.features .media {
+  border: 4px solid #fafafa;
+  padding: 40px 10px;
+  margin-bottom: 20px;
+}
+
+/* تنسيق الخط في العنوان */
+
+section.features .media .media-body h5 {
+  font-size: 24px;
+  color: #555;
+}
+
+/* تنسيق الخط في الفقرات النصية */
+
+ection.features .media .media-body p {
+  font-size: 15px;
+  line-height: 25px;
+  color: #9c9c9c;
+}
+
+/* جعل محاذاة النص لليسار في البطاقات التي رقمها زوجي*/
+
+section.features div[class*="col-"]:nth-child(even) {
+  text-align: left;
+}
+
+/* إضافة الصورة إلى خلفية تذييل الصفحة وتوسيطها */
+
+footer {
+  background-image: url(../image/footer-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+/* إضافة الطبقة الصفراء الشفافة على الخلفية وضبط الحاشية الخاصة بها */
+
+footer .top-footer .overlay {
+  background-color: rgba(255, 204, 0, 0.7);
+  padding: 60px 0;
+}
+
+/* التنسيقات المطبقة على خط العنوان */
+
+footer .top-footer .overlay h3 {
+  font-size: 30px;
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+/* تنسيق صندوق الإدخال */
+
+footer .top-footer .overlay .input-group input:hover, footer .top-footer .overlay .input-group input:focus {
+  box-shadow: 0 0 0;
+  border-color: #fff;
+}
+
+/* تنسيق طول حقل الإدخال */
+
+footer .top-footer .overlay .input-group input {
+  height: auto;
+}
+
+/* تنسيق الخط داخل النموذج */
+
+footer .top-footer .overlay .input-group input {
+  border-radius: 0;
+  font-size: 18px;
+  font-family: ar-font;
+  color: #c7c7c7;
+  border-color: #fff;
+}
+
+/* تصغير حجم نموذج الإرسال وضبط الحاشية والهامش */
+
+footer .top-footer .overlay .input-group {
+  width: 30%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* تنسيق اللون وضبط الحاشية في تذييل الصفحة */
+
+footer .contact .overlay {
+  background-color: rgba(28, 28, 28, 0.7);
+  padding: 60px 0 10px;
+  color: #fff;
+}
+
+/* h3 تنسيق اللون وحجم الخط في العنوان */
+
+footer .contact .overlay h3 {
+  font-size: 30px;
+  margin: 0 auto 30px;
+}
+
+
+
+/* تغير لون خلفية الأيقونات عند مرور مؤشر الفأرة عليها */
+
+footer .contact .overlay ul li a:hover {
+  background-color: #a23810;
+  color: #474c55;
+}
+
+/* إضافة خط أفقي تحت الأيقونات */
+
+footer .contact .overlay hr {
+  width: 25%;
+  border-top: 3px solid rgba(255, 255, 255, 0.1);
+  margin-top: 50px;
+}
+
+/* تنسيق أيقونة الظرف وإضافة مسافة بينها وبين البريد الإلكتروني */
+
+footer .contact .overlay p a {
+  color: #b4b4b4;
+}
+
+footer .contact .overlay p a i {
+  color: #a23810;
+  margin-left: 5px;
+}
+
+
+/*****مؤشر للاعلى****/
+#toUp {
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1000px) {
+  section.features .media {
+    padding-top: 10px !important;
+    max-height: 220px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width:992px) {
+  section.gallery .img-fluid {
+    width: 1000px !important;
+    height: 250px;
+  }
+
+  section.gallery .work-gallery label {
+    padding: 10px 5px;
+    font-size: 17px;
+  }
+
+}
+
+/*- تنسيق إلغاء التأثيرات الحركية فى شاشات الجوال -*/
+
+/*- animate.css فى حالة استخدام الاصدار رقم 4 من مكتبة -*/
+
+@media (max-width: 768px) {
+  .animate__bounceIn {
+    animation-name: none !important;
+  }
+
+  .animate__fadeInUp {
+    animation-name: none !important;
+  }
+
+  .animate__fadeInDown {
+    animation-name: none !important;
+  }
+
+  .animate__zoomIn {
+    animation-name: none !important;
+  }
+
+  section.slider .carousel-control-next, section.slider .carousel-control-prev {
+    display: none !important;
+
+  }
+
+  /* توسيط معرض الصور أفقيا وتحديد عرضه بـ 60% من عرض الصفحة */
+
+  section.slider .carousel-inner {
+    width: 100%;
+    margin: 0 auto;
+
+  }
+
+}
+
+
+
+@media (min-width:500px) and (max-width:670px) {
+
+  /* تحديد حجم الخط وشدته والتباعد بين الأسطر واللون للعنوان الرئيسي */
+
+  header .page-heading h1 {
+    font-size: 30px;
+    padding-top: 30px;
+  }
+
+  header .page-heading h3 {
+    width: 85%;
+  }
+
+
+  header .counter .is-countdown .countdown-section .countdown-amount {
+    font-size: 35px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-width: 1px;
+  }
+
+  /* تطبيق تنسيقات الخط على العامل الزمني، وجعله في أسطر مختلفة */
+
+  header .counter .is-countdown .countdown-section .countdown-period {
+    font-size: 15px;
+  }
+
+
+  footer .send-notification .input-group {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  /* تنسيق الخط والحدود داخل نموذج البريد الإلكتروني */
+
+  footer .send-notification .input-group input {
+    border-radius: 0;
+    font-size: 13px;
+    border-width: 2px;
+    width: 110px;
+
+  }
+
+  /* تنسيق لون وحجم الزر المستخدم لإرسال البريد الإلكتروني */
+
+  footer .send-notification .input-group button {
+    padding: 0px;
+  }
+
+  footer .send-notification .input-group button .fas, footer .input-group button .fas {
+    font-size: 5px;
+  }
+
+  /* تنسيق حجم الخط ونوع الخط لنموذج البريد الإلكتروني */
+
+  footer .send-notification h1 {
+    font-size: 18px;
+    margin: 0 auto 10px;
+
+  }
+
+  /* تغير موضع رسائل التحذير وإخفائها */
+
+  footer .send-notification .input-group .alert, footer .input-group .alert {
+    font-size: 10px;
+    padding: 3px;
+    width: 175px;
+  }
+
+
+}
+
+@media (max-width:1110px) and (min-width:670px) {
+
+
+  footer .send-notification .input-group {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  /* تنسيق حجم الخط ونوع الخط لنموذج البريد الإلكتروني */
+
+  footer .send-notification h1 {
+    font-size: 25px;
+    margin: 0 auto 10px;
+
+  }
+}
+
+@media (max-width:500px) {
+
+  /* تحديد حجم الخط وشدته والتباعد بين الأسطر واللون للعنوان الرئيسي */
+
+  header .page-heading h1 {
+    font-size: 30px;
+    padding-top: 30px;
+  }
+
+  header .page-heading h3 {
+    width: 85%;
+  }
+
+
+  header .counter .is-countdown .countdown-section .countdown-amount {
+    font-size: 35px;
+    width: 30px;
+    height: 35px;
+    line-height: 30px;
+    border-width: 1px;
+  }
+
+  /* تطبيق تنسيقات الخط على العامل الزمني، وجعله في أسطر مختلفة */
+
+  header .counter .is-countdown .countdown-section .countdown-period {
+    font-size: 15px;
+  }
+
+  footer .send-notification .input-group {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+
+  /* تنسيق الخط والحدود داخل نموذج البريد الإلكتروني */
+
+  footer .send-notification .input-group input {
+    border-radius: 0;
+    font-size: 13px;
+    border-width: 2px;
+    width: 110px;
+
+  }
+
+  /* تنسيق لون وحجم الزر المستخدم لإرسال البريد الإلكتروني */
+
+  footer .send-notification .input-group button {
+    padding: 0px;
+  }
+
+  footer .send-notification .input-group button .fas, footer .input-group button .fas {
+    font-size: 5px;
+  }
+
+  /* تنسيق حجم الخط ونوع الخط لنموذج البريد الإلكتروني */
+
+  footer .send-notification h1 {
+    font-size: 18px;
+    margin: 0 auto 10px;
+
+  }
+
+  /* تغير موضع رسائل التحذير وإخفائها */
+
+  footer .send-notification .input-group .alert, footer .input-group .alert {
+    font-size: 10px;
+    padding: 3px;
+    width: 175px;
+  }
+
+  /* تنسيقات أسهم التنقل */
+
+  section.slider .carousel-control-next, section.slider .carousel-control-prev {
+    width: 55px;
+    height: 55px;
+  }
+
+}
+
+
+@media (min-width:500px) and (max-width:767px) {
+  section.gallery .girl {
+    width: 700px;
+    height: 350px;
+  }
+
+}
